@@ -88,13 +88,14 @@
                     <tr><th>排名</th><th>模型</th><th>输入</th><th>输出</th><th>来源</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td class="rank rank-1">🥇</td><td>Gemini Flash-Lite</td><td class="price">$0.10</td><td class="price">$0.40</td><td><span class="provider provider-google">Google</span></td></tr>
-                    <tr><td class="rank rank-2">🥈</td><td>Gemini 2.0 Flash</td><td class="price">$0.10</td><td class="price">$0.40</td><td><span class="provider provider-google">Google</span></td></tr>
+                    <tr><td class="rank rank-1">🥇</td><td>DeepSeek <span class="badge badge-hot">神价!</span></td><td class="price">$0.28</td><td class="price">$0.42</td><td><span class="provider provider-google">DeepSeek</span></td></tr>
+                    <tr><td class="rank rank-2">🥈</td><td>Gemini Flash-Lite</td><td class="price">$0.10</td><td class="price">$0.40</td><td><span class="provider provider-google">Google</span></td></tr>
                     <tr><td class="rank rank-3">🥉</td><td>GPT-5-nano <span class="badge badge-new">NEW</span></td><td class="price">$0.05</td><td class="price">$0.40</td><td><span class="provider provider-openai">OpenAI</span></td></tr>
                     <tr><td class="rank">4</td><td>GPT-4o-mini</td><td class="price">$0.15</td><td class="price">$0.60</td><td><span class="provider provider-openai">OpenAI</span></td></tr>
                     <tr><td class="rank">5</td><td>Claude Haiku 3</td><td class="price">$0.25</td><td class="price">$1.25</td><td><span class="provider provider-anthropic">Anthropic</span></td></tr>
                 </tbody>
             </table>
+            <p style="margin-top:15px;color:#666;"><em>* DeepSeek $0.28 输入 (缓存未命中)，缓存命中仅 $0.028！</em></p>
         </div>
 
         <div class="lightning-box">
@@ -163,10 +164,10 @@
             const result = document.getElementById('result');
             
             let rec = '';
-            if (useCase === 'cheap') rec = '💰 推荐: Gemini Flash-Lite 或 GPT-5-nano';
-            else if (useCase === 'fast') rec = '⚡ 推荐: Claude Haiku 3';
+            if (useCase === 'cheap') rec = '💰 推荐: DeepSeek (神价!) 或 Gemini Flash-Lite';
+            else if (useCase === 'fast') rec = '⚡ 推荐: Claude Haiku 3 或 GPT-4o-mini';
             else if (useCase === 'quality') rec = '🧠 推荐: Claude Sonnet 4.6 或 GPT-5';
-            else if (useCase === 'reasoning') rec = '📐 推荐: OpenAI o3 或 Claude Sonnet 4.6';
+            else if (useCase === 'reasoning') rec = '📐 推荐: DeepSeek R1 或 OpenAI o3';
             else rec = '请选择使用场景';
             
             result.innerHTML = '<strong>' + rec + '</strong>';
