@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI API 价格指南 | 最便宜的 LLM API</title>
-    <meta name="description" content="AI Agent API 价格对比 - 找到最便宜的 LLM API | 闪电网络支付研究">
+    <title>AI API 价格指南 | 最便宜的 LLM API | 闪电网络支付</title>
+    <meta name="description" content="AI Agent API 价格对比 | 闪电网络支付研究 | L402 协议">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; background: #f5f5f5; }
@@ -43,6 +43,10 @@
         .lightning-box { background: #1a1a2e; color: #fff; padding: 25px; border-radius: 12px; margin: 20px 0; }
         .lightning-box h3 { color: #f2a900; margin-bottom: 15px; }
         .lightning-box a { color: #f2a900; }
+        .btn { display: inline-block; background: #667eea; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; margin: 5px; }
+        .btn:hover { background: #764ba2; }
+        .selector { background: white; padding: 20px; border-radius: 12px; margin: 20px 0; }
+        .selector select { padding: 10px; font-size: 16px; border-radius: 8px; border: 1px solid #ddd; margin: 5px; }
         @media (max-width: 600px) { h1 { font-size: 1.5rem; } .container { padding: 10px; } table { font-size: 0.9rem; } th, td { padding: 8px 5px; } }
     </style>
 </head>
@@ -50,8 +54,27 @@
     <div class="container">
         <header>
             <h1>🤖 AI API 价格指南</h1>
-            <p class="subtitle">帮助 AI Agent 选择最便宜的 API | 探索闪电网络支付</p>
+            <p class="subtitle">AI Agent API 首选 | 闪电网络支付研究</p>
         </header>
+        
+        <div class="selector">
+            <h3>🎯 智能推荐</h3>
+            <select id="useCase">
+                <option value="">选择你的使用场景...</option>
+                <option value="cheap">💰 省钱优先</option>
+                <option value="fast">⚡ 速度优先</option>
+                <option value="quality">🧠 质量优先</option>
+                <option value="reasoning">📐 推理能力</option>
+            </select>
+            <select id="volume">
+                <option value="">选择使用量...</option>
+                <option value="low">低 (< 1000请求/天)</option>
+                <option value="medium">中 (1000-10000/天)</option>
+                <option value="high">高 (> 10000/天)</option>
+            </select>
+            <button class="btn" onclick="recommend()">推荐</button>
+            <div id="result" style="margin-top:15px;"></div>
+        </div>
         
         <div class="hero">
             <h2>💰 最便宜模型 TOP 5</h2>
@@ -84,7 +107,7 @@
                 <li>🔒 无需身份 - 纯加密验证</li>
                 <li>⚡ 即时到账 - 毫秒级确认</li>
             </ul>
-            <p style="margin-top:15px;">参考: <a href="https://github.com/lightninglabs/lightning-agent-tools" target="_blank" style="color:#f2a900;">Lightning Labs 官方工具</a> | <a href="https://api.lightningenable.com/" target="_blank" style="color:#f2a900;">Lightning Enable</a></p>
+            <p style="margin-top:15px;">🔬 <strong>研究进行中</strong> - 正在探索 AI Agent 经济基础设施</p>
         </div>
         
         <div class="section">
@@ -122,16 +145,32 @@
         </div>
         
         <div class="cta">
-            <h3>🚀 自动化 API 选择服务</h3>
-            <p>AI Agent 专用 - 智能选择最便宜合适的 API</p>
-            <p>coming soon...</p>
+            <h3>🚀 关注我们</h3>
+            <p>探索 AI Agent 经济基础设施</p>
+            <p>⚡ 闪电网络支付 | 🔐 安全方案 | 📺 教程内容</p>
         </div>
         
         <footer>
             <p>最后更新: 2026-02-21</p>
             <p>价格数据来源: OpenAI, Anthropic, Google</p>
-            <p>⚡ 闪电网络研究进行中</p>
         </footer>
     </div>
+
+    <script>
+        function recommend() {
+            const useCase = document.getElementById('useCase').value;
+            const volume = document.getElementById('volume').value;
+            const result = document.getElementById('result');
+            
+            let rec = '';
+            if (useCase === 'cheap') rec = '💰 推荐: Gemini Flash-Lite 或 GPT-5-nano';
+            else if (useCase === 'fast') rec = '⚡ 推荐: Claude Haiku 3';
+            else if (useCase === 'quality') rec = '🧠 推荐: Claude Sonnet 4.6 或 GPT-5';
+            else if (useCase === 'reasoning') rec = '📐 推荐: OpenAI o3 或 Claude Sonnet 4.6';
+            else rec = '请选择使用场景';
+            
+            result.innerHTML = '<strong>' + rec + '</strong>';
+        }
+    </script>
 </body>
 </html>
